@@ -10,7 +10,7 @@ public class Bullet : MonoBehaviour
    public GameObject end;
    //弾のスピード
    [SerializeField] float speed = 10;
-   //弾を発射するまでの時間？
+   //弾を発射するまでの時間(タイマー)
    float shot_Timer = 0f;
    //弾の発射間隔の最短時間
    public float minTime = 10f;
@@ -29,13 +29,14 @@ public class Bullet : MonoBehaviour
         ///スタート判定を確認
         if(Start_Check.startCheck == true)
         {
+            //タイマーを進める
             shot_Timer += Time.deltaTime;
-
+            //プレイヤーが生存状態かつ、タイマーがインターバルを超えたか判定
             if(Gamerule.alive == true && shot_Timer >= interval)
             {
                 //弾の生成
                 GameObject clone = Instantiate(bullet,transform.position,Quaternion.identity);
-                //飛んでいく座標
+                //飛んでいく座標を設定
                 Vector3 endPos = end.transform.position;
                 //向きの生成
                 Vector3 shotForward = Vector3.Scale((endPos - transform.position), new Vector3(1,1,0)).normalized;
