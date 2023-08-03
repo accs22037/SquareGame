@@ -4,12 +4,14 @@ using UnityEngine;
 
 //画面外への移動を制限する壁を動かすスクリプト
 //カメラと同じ速度で移動する
-public class bor : MonoBehaviour
+public class bar : MonoBehaviour
 {
     //上下移動かどうかを判定
     public bool upDown = true;
     //プラス(上か右)かどうか判定
     public bool puls = true;
+
+    public static Vector3 pos;
     
     void Update()
     {
@@ -17,7 +19,7 @@ public class bor : MonoBehaviour
         //transformを取得
         Transform camBack = this.transform;
         //ワールド座標を基準に座標を取得
-        Vector3 pos = camBack.position;
+        pos = camBack.position;
         //スタート判定を確認
         if(Start_Check.startCheck == true)
         {
@@ -87,5 +89,6 @@ public class bor : MonoBehaviour
 
             camBack.position = pos; //座標を反映
         }
+        Debug.Log(camBack.position.y);
     }
 }
