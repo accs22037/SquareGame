@@ -6,10 +6,8 @@ using UnityEngine;
 //カメラと同じ速度で移動する
 public class bar : MonoBehaviour
 {
-    //上下移動かどうかを判定
-    public bool upDown = true;
-    //プラス(上か右)かどうか判定
-    public bool puls = true;
+    public bool upDown = true;  //上下移動かどうかを判定
+    public bool puls = true;    //座標がプラス(上か右)かどうか判定
 
     public static Vector3 pos;
     
@@ -89,6 +87,6 @@ public class bar : MonoBehaviour
 
             camBack.position = pos; //座標を反映
         }
-        Debug.Log(camBack.position.y);
+        //Debug.Log(camBack.position.y);
     }
 }

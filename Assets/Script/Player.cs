@@ -4,17 +4,13 @@ using UnityEngine;
 //プレイヤー移動に関するスクリプト
 public class Player : MonoBehaviour
 {
-    //プレイヤーの通常スピード
-    [SerializeField]float nomalSpeed = 10.0f;
-    //プレイヤーのスロースピード
-    [SerializeField]float slowSpeed = 5f;
-    //ゲーム中のプレイヤーのスピード
-    float gameSpeed;
+    [SerializeField]float nomalSpeed = 10.0f; //プレイヤーの通常スピード
+    [SerializeField]float slowSpeed = 5f;   //プレイヤーのスロースピード
+    float gameSpeed;    //ゲーム中のプレイヤーのスピード
 
     void Start() 
     {
-        //ゲームスピードを通常スピードにする
-        gameSpeed = nomalSpeed;
+        gameSpeed = nomalSpeed; //ゲームスピードを通常スピードにする
     }
     void Update()
     {

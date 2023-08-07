@@ -2,13 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//ジェネレーターを生成する
+//弾のジェネレーターを生成するスクリプト
 public class Instance_Generator : MonoBehaviour
 {
+    //上下生成座標
     int ax = 123;
     int ay = 71;
+
+    //左右生成座標
     int bx = 126;
     int by = 69;
+
     public GameObject Top;
     public GameObject Under;
     public GameObject Left;
@@ -35,11 +39,5 @@ public class Instance_Generator : MonoBehaviour
         {
             GameObject Generator = Instantiate(Right, new Vector3(-bx, i, 0), Quaternion.identity);
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

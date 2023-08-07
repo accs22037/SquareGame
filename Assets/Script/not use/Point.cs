@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//ポイントを追加するスクリプト
 public class Point : MonoBehaviour
 {
     public static int point; //スコアを計測する変数

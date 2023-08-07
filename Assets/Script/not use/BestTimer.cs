@@ -17,10 +17,11 @@ public class BestTimer : MonoBehaviour
         bestTimerText = GetComponentInChildren<Text> ();
     }
 	void Update () {
-        if(Timer.minute >= minute && Timer.seconds >= seconds)
+        if(Timer.minute >= minute && Timer.seconds > seconds)
         {
             minute = Timer.minute;
             seconds = Timer.seconds;
+            Debug.Log("更新");
         }
 
 		bestTimerText.text = "BestTime " + minute.ToString("00") + ":" + ((int) seconds).ToString ("00");
